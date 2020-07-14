@@ -45,13 +45,13 @@
         <input type="text" name="name">
         <input type="text" name="content">
         <input type="submit" value="送出">
-    </form>
+    </form> -->
     <h2>GET</h2>
     <form action="res_get.php" method="get">
         <input type="text" name="name">
         <input type="text" name="content">
         <input type="submit" value="送出">
-    </form> -->
+    </form>
     <?php
         // $a = ["name" => "John"];
         // // var_dump($a);
