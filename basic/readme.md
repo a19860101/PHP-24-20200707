@@ -139,3 +139,191 @@ switch(true){
 }
 //正整數
 ```
+## 迴圈 loop
+### for
+```php
+for($i=0;$i<10;$i++){
+    echo $i;
+}
+//0123456789
+```
+### while
+```php
+ $x = 0;
+while($x < 10){
+    $x++;
+    echo $x;
+}
+//12345678910
+```
+
+### do...while
+```php
+$y = 0;
+do {
+    $y++;
+    echo $y;
+}
+while($y < 0)
+//1
+```
+
+## 陣列 Array
+### 定義陣列
+```php
+# 第一種方法
+$a = array();
+$a[0] = "HTML";
+$a[1] = "CSS";
+$a[2] = "JAVASCRIPT";
+
+# 第二種方法
+$a = array("HTML","CSS","JAVASCRIPT");
+
+# 第三種方法
+$a = ["HTML","CSS","JAVASCRIPT"];
+```
+
+### 迭代陣列
+```php
+//for迴圈
+for($i=0;$i<count($a);$i++){
+    echo $a[$i];
+}
+//foreach迴圈
+foreach($a as $item){
+    echo $item;
+}
+```
+
+### 排序陣列
+
+* sort()
+* rsort()
+* shuffle()
+* ksort()
+* krsort()
+* asort()
+* arsort()
+
+### 陣列方法
+#### in_array()
+```php
+$datas = ["HTML","CSS","JAVASCRIPT","PHP","MYSQL"];
+var_dump(in_array("HTML",$datas));
+//bool(true)
+var_dump(in_array("123",$datas));
+//bool(false)
+```
+#### is_array()
+```php
+$datas = ["HTML","CSS","JAVASCRIPT","PHP","MYSQL"];
+$x = 0;
+var_dump(is_array($datas));
+//bool(true)
+var_dump(is_array($x));
+//bool(false)
+```
+
+#### compact()
+```php
+$user = "john";
+$mail = "john@gmail.com";
+$age = "23";
+$gender = "male";
+
+// $user_info = array();
+// array_push($user_info,$user,$mail,$age,$gender);
+
+// var_dump($user_info);
+// echo $user_info[1];  
+
+$user_info = compact("user","mail","age","gender");
+var_dump($user_info);
+
+echo $user_info["user"];
+echo $user_info["mail"];
+echo $user_info["age"];
+echo $user_info["gender"];
+```
+#### implode()
+陣列轉字串
+```php
+$a = ["HTML","CSS","JAVASCRIPT"];
+$a_str = implode(",",$a);
+// HTML,CSS,JAVASCRIPT
+$a_str_2 = implode("__",$a);
+// HTML__CSS__JAVASCRIPT
+```
+## 字串 String
+### 字串方法
+#### substr(),mb_substr()
+擷取部分字串
+```php
+$str = "統一獅隊今晚在台南棒球場1329人的見證下，潘武雄在八局下代打轟出的右外野兩分砲，達成隊史第1萬4000分打點的里程碑，連第1萬4001分打點也一起進帳。"
+echo substr($str,0,9);
+# substr(字串,起始位置,長度)
+# substr的三個字元長度為一個繁體中文字，在繁體中文中不建議使用。
+
+echo mb_substr($str,0,10,"utf8");
+# mb_substr(字串,起始位置,長度,編碼)
+```
+#### nl2br()
+自動換行 
+#### md5(),sha1()
+md5與sha1加密
+```php
+$pw = "hello";
+echo md5($pw);
+echo sha1($pw);
+```
+#### crypt()
+crypt加密
+```php
+$pw = "hello";
+echo crypt($pw,"sr");
+```
+#### strip_tags()
+移除HTML標籤
+```php
+$s = "<h1>哈囉你好嗎?</h1>";
+echo strip_tags($s);
+```
+## function 函式
+```php
+function test(){
+    echo "hello test";
+}
+test();
+//hello test
+function test(){
+    return "hello return";
+}
+echo test();
+// hello return
+function q($x,$y){
+    return $x + $y;
+}
+echo q(10,4);
+//14
+function qq($x=100,$y=1000){
+    return $x + $y;
+}
+echo qq();
+//1100
+echo qq(3,4);
+//7
+
+```
+## date函式
+```php=
+//設定時區
+date_default_timezone_set("Asia/Tokyo");
+//取得時區
+echo date_default_timezone_get();
+//呼叫日期時間 2020-07-01 00:00:00
+echo date("Y-m-d H:i:s");
+
+//呼叫時間戳記
+echo time();
+```
