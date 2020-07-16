@@ -13,9 +13,14 @@
     <?php
         $imgs = glob("images/*");
         // var_dump($imgs);
+        $imgs_num = count($imgs);
+        echo "<div>目前共有{$imgs_num}張圖片";
         foreach($imgs as $img){
-            echo "<div><img src='{$img}' width='200'></div>";
-        }
     ?>
+    <div>
+        <img src="<?php echo $img?>" width="200">
+        <a href="delete.php?img=<?php echo $img?>">刪除</a>
+    </div>
+    <?php }?>
 </body>
 </html>
