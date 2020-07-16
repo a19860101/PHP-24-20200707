@@ -6,6 +6,7 @@
    $type = $_FILES["img"]["type"];
    $error = $_FILES["img"]["error"];
     // $target = "images/{$name}";
+
     switch($type){
         case "image/jpeg":
             $target = "images/".md5(time()).".jpg";
@@ -23,11 +24,14 @@
    if($error == 0){
        if(move_uploaded_file($tmp_name,$target)){
             echo  "上傳成功";
+            header("refresh:2;url=index.php");
        }else{
            echo "上傳失敗";
+           header("refresh:2;url=index.php");
        }
    }else if($error == 4){
        header("location:index.php");
    }else{
        echo "上船錯誤";
+       header("refresh:2;url=index.php");
    }
