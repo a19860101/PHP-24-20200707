@@ -5,7 +5,6 @@
    $size = $_FILES["img"]["size"];
    $type = $_FILES["img"]["type"];
    $error = $_FILES["img"]["error"];
-   
     $target = "images/{$name}";
 
    if($error == 0){
@@ -14,6 +13,8 @@
        }else{
            echo "上傳失敗";
        }
+   }else if($error == 4){
+       header("location:index.php");
    }else{
-       echo "上傳錯誤";
+       echo "上船錯誤";
    }
