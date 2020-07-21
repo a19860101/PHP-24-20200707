@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-12">
             <h2>新增資料</h2>
-            <form action="">
+            <form action="store.php" method="post">
                 <div class="form-group">
                     <label for="">姓名</label>
                     <input type="text" name="name" class="form-control">
