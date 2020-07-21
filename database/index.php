@@ -3,16 +3,6 @@
 
     $sql = "SELECT * FROM students";
     $result = mysqli_query($conn,$sql);
-
-    while($row = mysqli_fetch_assoc($result)){
-        echo $row["id"];
-        echo $row["name"];
-        echo $row["phone"];
-        echo $row["mail"];
-        echo $row["gender"];
-        echo $row["create_at"];
-        echo "<br>";
-    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,6 +12,17 @@
     <title>Document</title>
 </head>
 <body>
-
+    <table>
+    <?php while($row=mysqli_fetch_assoc($result)){ ?>
+        <tr>
+            <td><?php echo $row["id"];?></td>
+            <td><?php echo $row["name"];?></td>
+            <td><?php echo $row["mail"];?></td>
+            <td><?php echo $row["phone"];?></td>
+            <td><?php echo $row["gender"];?></td>
+            <td><?php echo $row["create_at"];?></td>
+        </tr>
+    <?php } ?>
+    </table>
 </body>
 </html>
