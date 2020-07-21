@@ -28,6 +28,7 @@
                         <td><?php echo $row["create_at"];?></td>
                         <td>
                             <form action="delete.php" method="post">
+                                <input type="hidden" name="id" value="<?php echo $row["id"];?>">
                                 <input type="submit" value="刪除" class="btn btn-danger btn-sm" onclick="return confirm('確認刪除？')">
                             </form>
                         </td>
