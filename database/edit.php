@@ -26,11 +26,11 @@
                 </div>
                 <div class="form-group">
                     <label for="">性別</label>
-                    <input type="radio" name="gender" value="男">
+                    <input type="radio" name="gender" value="男" <?php if($row["gender"] == "男"){echo "checked";}?>>
                     <label for="">男</label>
-                    <input type="radio" name="gender" value="女">
+                    <input type="radio" name="gender" value="女" <?php echo $row["gender"] == "女" ? 'checked':'';?>>
                     <label for="">女</label>
-                    <input type="radio" name="gender" value="不透漏">
+                    <input type="radio" name="gender" value="不透漏" <?php if($row["gender"] == "不透漏"){echo "checked";}?>>
                     <label for="">不透漏</label>
                 </div>
                 <input type="submit" class="btn btn-primary" value="編輯資料">
