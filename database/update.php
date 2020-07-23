@@ -15,4 +15,3 @@
             WHERE id = {$id}";
     mysqli_query($conn,$sql);
     header("location:index.php");
-    
