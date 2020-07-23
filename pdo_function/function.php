@@ -28,3 +28,13 @@
             echo $e->getMessage();
         }
     }
+    function store($name,$mail,$phone,$gender){
+        try {
+            require_once("pdo.php"); 
+            $sql = "INSERT INTO students(name,mail,phone,gender,create_at)VALUES(?,?,?,?,?)";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([$name,$mail,$phone,$gender,$now]);
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }
+    }
