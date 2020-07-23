@@ -11,7 +11,7 @@
     <div class="row">
         <div class="col-12">
             <h2>編輯資料</h2>
-            <form action="" method="post">
+            <form action="update.php" method="post">
                 <div class="form-group">
                     <label for="">姓名</label>
                     <input type="text" name="name" class="form-control" value="<?php echo $row["name"];?>">
@@ -33,6 +33,7 @@
                     <input type="radio" name="gender" value="不透漏" <?php if($row["gender"] == "不透漏"){echo "checked";}?>>
                     <label for="">不透漏</label>
                 </div>
+                <input type="hidden" name="id" value="<?php echo $row["id"];?>">
                 <input type="submit" class="btn btn-primary" value="編輯資料">
             </form>
         </div>
