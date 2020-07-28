@@ -4,7 +4,7 @@
             require_once("pdo.php");
             session_start();
             if($user == '' || $pw == ''){
-                header("location:login.php");
+                return 'empty';
             }
             $sql = "SELECT * FROM users WHERE user = ?";
             $stmt = $pdo->prepare($sql);
@@ -14,16 +14,12 @@
                 $_SESSION["ID"] = $row["id"];
                 $_SESSION["USER"] = $user;
                 $_SESSION["LV"] = $row["level"];
-                // echo "登入成功";
-                // header("refresh:3;url=index.php");
                 return 'success';
             }else{
-                // echo "帳號或密碼錯誤";
-                // header("refresh:3;url=index.php?error");
                 return 'error';
             }
         }catch(PDOException $e){
-            echo $e->getMessage();
+            return $e->getMessage();
         }
     }
     function logout(){
