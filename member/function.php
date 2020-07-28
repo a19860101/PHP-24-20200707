@@ -16,10 +16,17 @@
                 $_SESSION["LV"] = $row["level"];
                 // echo "登入成功";
                 // header("refresh:3;url=index.php");
+                return 'success';
             }else{
-                echo "帳號或密碼錯誤";
+                // echo "帳號或密碼錯誤";
+                // header("refresh:3;url=index.php?error");
+                return 'error';
             }
         }catch(PDOException $e){
             echo $e->getMessage();
         }
+    }
+    function logout(){
+        session_start();
+        session_destroy();
     }

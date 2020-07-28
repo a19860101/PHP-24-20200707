@@ -1,4 +1,9 @@
 <?php
     include("function.php");
-    auth($_POST["user"],$_POST["pw"]);
-    header("location:index.php");
+    $auth = auth($_POST["user"],$_POST["pw"]);
+    if($auth == 'success'){
+        header("location:index.php");
+    }else{
+        header("location:login.php");
+    }
+
