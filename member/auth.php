@@ -4,6 +4,9 @@
         session_start();
         $user = $_POST["user"];
         $pw = $_POST["pw"];
+        if($user == '' || $pw == ''){
+            header("location:login.php");
+        }
         $sql = "SELECT * FROM users WHERE user = ?";
         $stmt = $pdo->prepare($sql);
         $stmt->execute([$user]);
