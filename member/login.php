@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-12">
             <h2>登入</h2>
-            <form action="" method="post">
+            <form action="auth.php" method="post">
                 <div class="form-group">
                     <label for="">帳號</label>
                     <input type="text" name="user" class="form-control">
