@@ -11,9 +11,12 @@
         <input type="text" name="user">
         <input type="submit" value="送出">
     </form>
+    <a href="logout.php">登出</a>
     <?php
         if($_SESSION){
             echo $_SESSION["USER"];
+        }else{
+            echo "訪客";
         }
     ?>
 </body>
