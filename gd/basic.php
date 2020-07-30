@@ -9,10 +9,11 @@
     imagefill($canvas,0,0,$red);
     imageline($canvas,0,0,800,600,$white);
     imageline($canvas,800,0,0,600,$white);
+    imagestring($canvas,5,0,0,"HELLO PHP",$white);
 
     // header("content-type:image/jpeg");
-    imagejpeg($canvas,"test.jpg");
-    // header("content-type:image/png");
-    imagepng($canvas,"test.png");
+    // imagejpeg($canvas,"test.jpg");
+    header("content-type:image/png");
+    imagepng($canvas);
     // header("content-type:image/gif");
-    imagegif($canvas,"test.gif");
+    // imagegif($canvas,"test.gif");
