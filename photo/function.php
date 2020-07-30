@@ -1,6 +1,13 @@
 <?php
-    function store(){
-
+    function store($path){
+        try{
+            require_once("pdo.php");
+            $sql = "INSERT INTO photos(path,create_at)VALUES(?,?)";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([$path,$now]);
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }
     }
     function uploadImg($file){
         $type = $file["type"];
