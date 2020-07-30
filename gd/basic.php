@@ -6,7 +6,13 @@
     $red = imagecolorallocate($canvas,255,0,0);
     $white = imagecolorallocate($canvas,255,255,255);
 
-    imagefill($canvas,0,0,$white);
+    imagefill($canvas,0,0,$red);
+    imageline($canvas,0,0,800,600,$white);
+    imageline($canvas,800,0,0,600,$white);
 
-    header("content-type:image/jpeg");
-    imagejpeg($canvas);
+    // header("content-type:image/jpeg");
+    imagejpeg($canvas,"test.jpg");
+    // header("content-type:image/png");
+    imagepng($canvas,"test.png");
+    // header("content-type:image/gif");
+    imagegif($canvas,"test.gif");
