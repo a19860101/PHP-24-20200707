@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-12">
             <h2>申請會員</h2>
-            <form action="store.php" method="post">
+            <form action="storeUser.php" method="post">
                 <div class="form-group">
                     <label for="">帳號</label>
                     <input type="text" name="user" class="form-control">
