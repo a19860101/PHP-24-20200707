@@ -36,8 +36,15 @@
             return $e->getMessage();
         }
     }
-    function updatePost(){
-
+    function updatePost($title,$content,$c_id,$id){
+        try {
+            require_once("pdo.php");
+            $sql = "UPDATE posts SET title=?,content=?,c_id=?,update_at=? WHERE id = ?";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([$title,$content,$c_id,$now,$id]);
+        }catch(PDOException $e){
+            return $e->getMessage();
+        }
     }
     function deletePost($id){
         try {

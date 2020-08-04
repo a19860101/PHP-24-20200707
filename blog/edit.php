@@ -16,6 +16,7 @@
                     <label for="content">內文</label>
                     <textarea name="content" id="content" rows="10" class="form-control"><?php echo $row["content"];?></textarea>
                 </div>
+                <input type="hidden" name="id" value="<?php echo $row["id"];?>">
                 <input type="submit" value="儲存" class="btn btn-primary">
                 <input type="button" value="取消" class="btn btn-danger" onclick="history.back()">
             </form>
