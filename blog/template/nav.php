@@ -9,5 +9,16 @@
                 <a class="nav-link" href="create.php">新增</a>
             </li>
         </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="register.php">申請會員</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="login.php">登入</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="logout.php">登出</a>
+            </li>
+        </ul>
     </div>
 </nav>
