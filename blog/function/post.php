@@ -39,8 +39,15 @@
     function updatePost(){
 
     }
-    function deletePost(){
-
+    function deletePost($id){
+        try {
+            require_once("pdo.php");
+            $sql = "DELETE FROM posts WHERE id = ?";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([$id]);
+        }catch(PDOException $e){
+            return $e->getMessage();
+        }
     }
     function uploadImg($file){
         $type = $file["type"];

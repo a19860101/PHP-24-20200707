@@ -20,7 +20,7 @@
             <div>最後更新時間:<?php echo $row["update_at"];?></div>
             <form action="delete.php" method="post" class="d-inline-block">
                 <input type="hidden" name="id" value="<?php echo $row["id"];?>">
-                <input type="submit" class="btn btn-danger" value="刪除文章">
+                <input type="submit" class="btn btn-danger" value="刪除文章" onclick="return confirm('確認刪除？')">
             </form>
             <a href="edit.php?id=<?php echo $row["id"];?>" class="btn btn-success">編輯文章</a>
         </div>
