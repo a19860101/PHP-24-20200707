@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="index.php">LOGO</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,15 +11,22 @@
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
+            <?php if(!$_SESSION){ ?>
+            <li class="nav-item">
                 <a class="nav-link" href="register.php">申請會員</a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="login.php">登入</a>
             </li>
+            <?php } ?>
+            <?php if($_SESSION){ ?>
             <li class="nav-item active">
+                <a class="nav-link" href="#"><?php echo $_SESSION["USER"];?>你好</a>
+            </li>
+            <li class="nav-item ">
                 <a class="nav-link" href="logout.php">登出</a>
             </li>
+            <?php }?>
         </ul>
     </div>
 </nav>
