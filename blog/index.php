@@ -12,7 +12,7 @@
         <div class="col-12 my-3">
             <h2><?php echo $row["title"]; ?></h2>
             <div>
-                作者:<?php echo $row["u_id"];?>
+                作者:<?php echo $row["user"];?>
                 分類:<?php echo $row["c_title"];?>
             </div>
             <div class="content">
