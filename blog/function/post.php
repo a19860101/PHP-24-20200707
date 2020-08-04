@@ -17,8 +17,15 @@
     function showPost(){
 
     }
-    function storePost(){
-
+    function storePost($title,$content,$c_id,$u_id){
+        try {
+            require_once("pdo.php");
+            $sql = "INSERT INTO posts (title,content,c_id,u_id,create_at,update_at)VALUES(?,?,?,?,?,?)";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([$title,$content,$c_id,$u_id,$now,$now]);
+        }catch(PDOException $e){
+            return $e->getMessage();
+        }
     }
     function updatePost(){
 
