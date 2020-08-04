@@ -14,8 +14,17 @@
             return $e->getMessage();
         }
     }
-    function showPost(){
-
+    function showPost($id){
+        try {
+            require_once("pdo.php");
+            $sql = "SELECT * FROM posts WHERE id = ?";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([$id]);
+            $row = $stmt->fetch();
+            return $row;
+        }catch(PDOException $e){
+            return $e->getMessage();
+        }
     }
     function storePost($title,$content,$c_id,$u_id){
         try {
