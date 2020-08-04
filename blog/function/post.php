@@ -2,7 +2,7 @@
     function showAllPosts(){
         try {
             require_once("pdo.php");
-            $sql = "SELECT * FROM posts";
+            $sql = "SELECT posts.*,cates.title AS c_title FROM posts LEFT JOIN cates ON posts.c_id = cates.id";
             $stmt = $pdo->prepare($sql);
             $stmt->execute();
             $rows = array();
