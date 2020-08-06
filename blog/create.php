@@ -13,6 +13,10 @@
                     <input type="text" id="title" name="title" class="form-control">
                 </div>
                 <div class="form-group">
+                    <label for="cover">封面圖片</label>
+                    <input type="file" name="cover" id="cover">
+                </div>
+                <div class="form-group">
                     <label for="content">內文</label>
                     <textarea name="content" id="content" rows="10" class="form-control"></textarea>
                 </div>
