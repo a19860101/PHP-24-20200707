@@ -20,7 +20,10 @@
             </div>
             <div class="content">
                 <?php echo mb_substr(strip_tags($row["content"]),0,150,"utf-8"); ?>
-                <a href="show.php?id=<?php echo $row["id"];?>">繼續閱讀...</a>
+            </div>
+            <div>
+            
+                <a href="show.php?id=<?php echo $row["id"];?>" class="btn btn-primary my-3">繼續閱讀...</a>
             </div>
             <div>最後更新時間:<?php echo $row["update_at"];?></div>
         </div>

@@ -21,7 +21,10 @@
     function showPost($id){
         try {
             require_once("pdo.php");
-            $sql = "SELECT * FROM posts WHERE id = ?";
+            $sql = "SELECT posts.*,users.user,cates.title AS c_title FROM posts 
+                    LEFT JOIN cates ON posts.c_id = cates.id
+                    LEFT JOIN users ON posts.u_id = users.id
+                    WHERE posts.id = ?";
             $stmt = $pdo->prepare($sql);
             $stmt->execute([$id]);
             $row = $stmt->fetch();
