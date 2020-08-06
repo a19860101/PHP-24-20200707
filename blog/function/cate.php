@@ -1,7 +1,7 @@
 <?php
     function showAllCates(){
         try {
-            require_once("pdo.php");
+            require("pdo.php");
             $sql = "SELECT * FROM cates";
             $stmt = $pdo->prepare($sql);
             $stmt->execute();
