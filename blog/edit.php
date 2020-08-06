@@ -22,7 +22,7 @@
                 <?php }else{?>
                    
                     <img src="thumbs/<?php echo $row["cover"];?>" width="200">
-                   
+                    <a href="updateCover.php?id=<?php echo $row["id"];?>&cover=<?php echo $row["cover"];?>" class="btn btn-danger">刪除</a>
                 <?php } ?>
                 </div>
                 <div class="form-group">
