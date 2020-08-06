@@ -4,7 +4,9 @@
             require_once("pdo.php");
             $sql = "SELECT posts.*,users.user,cates.title AS c_title FROM posts 
                     LEFT JOIN cates ON posts.c_id = cates.id
-                    LEFT JOIN users ON posts.u_id = users.id";
+                    LEFT JOIN users ON posts.u_id = users.id
+                    ORDER BY id DESC
+                    ";
             $stmt = $pdo->prepare($sql);
             $stmt->execute();
             $rows = array();
