@@ -9,7 +9,7 @@
 <div class="container py-5">
     <div class="row">
         <div class="col-12">
-            <form action="update.php" method="post">
+            <form action="update.php" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="title">標題</label>
                     <input type="text" id="title" name="title" class="form-control" value=<?php echo $row["title"];?>>
@@ -20,7 +20,7 @@
                     <input type="file" name="cover">
                    
                 <?php }else{?>
-                   
+                    <input type="hidden" name="cover" value=<?php echo $row["cover"];?>>
                     <img src="thumbs/<?php echo $row["cover"];?>" width="200">
                     <a href="updateCover.php?id=<?php echo $row["id"];?>&cover=<?php echo $row["cover"];?>" class="btn btn-danger">刪除</a>
                 <?php } ?>
