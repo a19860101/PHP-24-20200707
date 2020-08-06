@@ -14,6 +14,17 @@
                     <label for="title">標題</label>
                     <input type="text" id="title" name="title" class="form-control" value=<?php echo $row["title"];?>>
                 </div>
+                <div>
+                <?php if($row["cover"] == "no-pic.png"){ ?>
+                   
+                    <input type="file" name="cover">
+                   
+                <?php }else{?>
+                   
+                    <img src="thumbs/<?php echo $row["cover"];?>" width="200">
+                   
+                <?php } ?>
+                </div>
                 <div class="form-group">
                     <label for="content">內文</label>
                     <textarea name="content" id="content" rows="10" class="form-control"><?php echo $row["content"];?></textarea>
@@ -36,3 +47,7 @@
     </div>
 </div>
 <?php include("template/footer.php");?>
+<script src="https://cdn.ckeditor.com/4.14.1/full/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace( 'content' );
+</script>
