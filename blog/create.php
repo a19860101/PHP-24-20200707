@@ -7,7 +7,7 @@
 <div class="container py-5">
     <div class="row">
         <div class="col-12">
-            <form action="store.php" method="post">
+            <form action="store.php" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="title">標題</label>
                     <input type="text" id="title" name="title" class="form-control">

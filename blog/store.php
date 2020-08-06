@@ -6,5 +6,13 @@
     $c_id = $_POST["c_id"];
     $u_id = $_SESSION["ID"];
 
-    storePost($title,$content,$c_id,$u_id);
+    $file = $_FILES["cover"];
+    
+    if($file["name"] == ""){
+        $path = "no-pic.jpg";
+    }else{
+        $path = uploadImg($file);
+    }
+
+    storePost($title,$content,$c_id,$u_id,$path);
     header("location:index.php");
