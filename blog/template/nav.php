@@ -6,9 +6,11 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
+            <?php if($_SESSION){ ?>
             <li class="nav-item active">
                 <a class="nav-link" href="create.php">新增</a>
             </li>
+            <?php } ?>
         </ul>
         <ul class="navbar-nav ml-auto">
             <?php if(!$_SESSION){ ?>

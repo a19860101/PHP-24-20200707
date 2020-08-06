@@ -16,14 +16,17 @@
                 <?php echo $row["content"]; ?>
             </div>
             <div>最後更新時間:<?php echo $row["update_at"];?></div>
-            <?php if($row["u_id"] == $_SESSION["ID"]){ ?>
+            <?php 
+                if($_SESSION){     
+                    if($row["u_id"] == $_SESSION["ID"]){ 
+            ?>
             <form action="delete.php" method="post" class="d-inline-block">
                 <input type="hidden" name="id" value="<?php echo $row["id"];?>">
                 <input type="hidden" name="cover" value=<?php echo $row["cover"]; ?>>
                 <input type="submit" class="btn btn-danger" value="刪除文章" onclick="return confirm('確認刪除？')">
             </form>
             <a href="edit.php?id=<?php echo $row["id"];?>" class="btn btn-success">編輯文章</a>
-            <?php } ?>
+            <?php } }?>
         </div>
     </div>
 </div>
