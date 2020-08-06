@@ -9,7 +9,7 @@
     $file = $_FILES["cover"];
     
     if($file["name"] == ""){
-        $path = "no-pic.jpg";
+        $path = "no-pic.png";
     }else{
         $path = uploadImg($file);
     }

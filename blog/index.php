@@ -7,9 +7,12 @@
 <?php include("template/header.php");?>
 <?php include("template/nav.php");?>
 <div class="container py-5">
-    <div class="row">
+    <div class="row justify-content-center">
         <?php foreach($rows as $row){ ?>
-        <div class="col-12 my-3">
+        <div class="col-8 my-3">
+            <div>
+                <img src="thumbs/<?php echo $row["cover"];?>" class="w-100">
+            </div>
             <h2><?php echo $row["title"]; ?></h2>
             <div>
                 作者:<?php echo $row["user"];?>
