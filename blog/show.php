@@ -1,9 +1,7 @@
 <?php 
     include("function/post.php"); 
     $row = showPost($_GET["id"]);
-
 ?>
-
 <?php include("template/header.php");?>
 <?php include("template/nav.php");?>
 <div class="container py-5">
