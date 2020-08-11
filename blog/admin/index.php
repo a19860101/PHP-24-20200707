@@ -35,7 +35,11 @@
                         <form action="switchLevel.php" method="post">
                             <input type="hidden" value="<?php echo $row["id"];?>" name="id">
                             <input type="hidden" value="<?php echo $row["level"];?>" name="level">
+                            <?php if($row["id"] == $_SESSION["ID"]){ ?>
+                            <input type="button" class="btn btn-dark" value="切換層級" disabled>
+                            <?php }else{ ?>
                             <input type="submit" class="btn btn-info" value="切換層級">
+                            <?php } ?>
                         </form>
                     </td>
                 </tr>
