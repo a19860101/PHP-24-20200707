@@ -32,7 +32,9 @@
                         ?>
                     </td>
                     <td>
-                        <form action="" method="post">
+                        <form action="switchLevel.php" method="post">
+                            <input type="hidden" value="<?php echo $row["id"];?>" name="id">
+                            <input type="hidden" value="<?php echo $row["level"];?>" name="level">
                             <input type="submit" class="btn btn-info" value="切換層級">
                         </form>
                     </td>
