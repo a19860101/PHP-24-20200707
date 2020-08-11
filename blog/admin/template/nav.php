@@ -6,18 +6,13 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-            <?php if($_SESSION){ ?>
-            <li class="nav-item active">
-                <a class="nav-link" href="create.php">新增</a>
-            </li>
-            <?php } ?>
             <!-- **************************************************** -->
             <?php if($_SESSION && $_SESSION["LV"]==0){ ?>
             <li class="nav-item">
                 <a href="#" class="nav-link">分類管理</a>
             </li>
             <li class="nav-item">
-                <a href="admin/index.php" class="nav-link">會員管理</a>
+                <a href="#" class="nav-link">會員管理</a>
             </li>
             <?php } ?>
             <!-- **************************************************** -->
@@ -25,10 +20,10 @@
         <ul class="navbar-nav ml-auto">
             <?php if(!$_SESSION){ ?>
             <li class="nav-item">
-                <a class="nav-link" href="register.php">申請會員</a>
+                <a class="nav-link" href="../register.php">申請會員</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="login.php">登入</a>
+                <a class="nav-link" href="../login.php">登入</a>
             </li>
             <?php } ?>
             <?php if($_SESSION){ ?>
@@ -36,7 +31,7 @@
                 <a class="nav-link" href="#"><?php echo $_SESSION["USER"];?>你好</a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link" href="logout.php">登出</a>
+                <a class="nav-link" href="../logout.php">登出</a>
             </li>
             <?php }?>
         </ul>

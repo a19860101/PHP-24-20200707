@@ -18,10 +18,21 @@
         </div>
     </div>
 </div>
-<?php if(isset($_GET['error']) && $_GET['error'] == 1){ ?>
-<div class="alert alert-danger" role="alert">
-    <?php echo "請登入會員"; ?>
-</div>
-<?php } ?>
 
+<?php if(isset($_GET['error'])){ ?>
+    <?php
+    switch($_GET["error"]){
+        case 1:
+            echo "<div class=\"alert alert-danger\" role=\"alert\">";
+            echo "請登入會員";
+            echo "</div>";
+        break;
+        case 2:
+            echo "<div class=\"alert alert-danger\" role=\"alert\">";
+            echo "您沒有權限";
+            echo "</div>";
+        break;
+    }
+?>
+<?php } ?>
 <?php include("template/footer.php");?>
