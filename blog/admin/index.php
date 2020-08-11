@@ -1,3 +1,7 @@
+<?php
+    include("function/user.php");
+    $rows = showAllUsers();
+?>
 <?php include('template/header.php'); ?>
 <?php include('template/nav.php'); ?>
 <?php
@@ -7,7 +11,34 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-        
+            <table class="table">
+                <tr>
+                    <th>#</th>
+                    <th>名稱</th>
+                    <th>申請時間</th>
+                    <th>層級</th>
+                    <th>動作</th>
+                </tr>
+                <?php foreach($rows as $row){ ?>
+                <tr>
+                    <td><?php echo $row["id"];?></td>
+                    <td><?php echo $row["user"];?></td>
+                    <td><?php echo $row["create_at"];?></td>
+                    <td>
+                        <?php 
+                        
+                            echo $row["level"] == 0 ? "管理員" : "一般會員";
+                        
+                        ?>
+                    </td>
+                    <td>
+                        <form action="" method="post">
+                            <input type="submit" class="btn btn-info" value="切換層級">
+                        </form>
+                    </td>
+                </tr>
+                <?php } ?>
+            </table>
         </div>
     </div>
 </div>
