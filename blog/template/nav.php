@@ -14,7 +14,7 @@
             <!-- **************************************************** -->
             <?php if($_SESSION && $_SESSION["LV"]==0){ ?>
             <li class="nav-item">
-                <a href="#" class="nav-link">分類管理</a>
+                <a href="admin/cateList.php" class="nav-link">分類管理</a>
             </li>
             <li class="nav-item">
                 <a href="admin/index.php" class="nav-link">會員管理</a>
