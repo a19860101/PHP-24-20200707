@@ -18,6 +18,10 @@
             echo $this->login();
         }
 
+        static function title(){
+            echo "HELLO";
+        }
+
     }
     //建立實體
     // $user1 = new User;
@@ -34,3 +38,5 @@
 
     $member1 = new Member;
     echo $member1->qwer();
+
+    User::title();
